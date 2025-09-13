@@ -1,7 +1,8 @@
 import { Container, Row, Col } from "react-bootstrap";
 import ListingCard from "../components/listings/ListingCard";
 import listings from "../services/api/data";
-
+import ListingImageModal from "../components/listings/ListingImageModal";
+import { useState } from "react";
 
 export default function HomePage() {
   return (

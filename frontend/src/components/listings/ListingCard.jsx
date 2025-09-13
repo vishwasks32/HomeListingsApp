@@ -1,14 +1,24 @@
 import { Card, Button } from "react-bootstrap";
+import ListingImageModal from "./ListingImageModal";
+import { useState } from "react";
 
 export default function ListingCard({ listing }) {
   const linkText = 'know more...'
+  // State variable to track the modal's visibility.
+  const [showModal, setShowModal] = useState(false);
+  // Event handlers to show and hide the modal.
+  const handleShow = () => setShowModal(true);
+  const handleClose = () => setShowModal(false);
   return (
+    <>
     <Card className="shadow-sm h-100">
       <Card.Img
         variant="top"
         src={listing.image}
         alt={listing.title}
         style={{ height: "200px", objectFit: "cover" }}
+        // Attach the event handler to the image.
+        onClick={handleShow}
       />
       <Card.Body className="d-flex flex-column">
         <Card.Title className="fs-6">{listing.title}</Card.Title>
@@ -18,7 +28,13 @@ export default function ListingCard({ listing }) {
         >
           {linkText}
         </a>
-      </Card.Body>
+      </Card.Body> 
     </Card>
+      <ListingImageModal
+        listing={listing}
+        showModal = {showModal}
+        handleClose = {handleClose}
+      />
+      </>
   );
 }
