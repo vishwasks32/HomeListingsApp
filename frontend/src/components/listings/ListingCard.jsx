@@ -16,7 +16,7 @@ export default function ListingCard({ listing }) {
         variant="top"
         src={listing.image}
         alt={listing.title}
-        style={{ height: "200px", objectFit: "cover" }}
+        style={{ height: "200px", objectFit: "cover", cursor: "pointer"  }}
         // Attach the event handler to the image.
         onClick={handleShow}
       />
