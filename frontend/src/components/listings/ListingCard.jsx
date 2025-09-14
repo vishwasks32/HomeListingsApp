@@ -1,6 +1,7 @@
 import { Card, Button } from "react-bootstrap";
 import ListingImageModal from "./ListingImageModal";
 import { useState } from "react";
+import { Link } from "react-router";
 
 export default function ListingCard({ listing }) {
   const linkText = 'know more...'
@@ -22,12 +23,9 @@ export default function ListingCard({ listing }) {
       />
       <Card.Body className="d-flex flex-column">
         <Card.Title className="fs-6">{listing.title}</Card.Title>
-                <a 
-          href="#" 
-          className="text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200"
-        >
+        <Link to={`/listings/${listing.id}`} >
           {linkText}
-        </a>
+        </Link>
       </Card.Body> 
     </Card>
       <ListingImageModal

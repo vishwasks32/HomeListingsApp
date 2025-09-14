@@ -1,6 +1,5 @@
 import Layout from "./components/layout/Layout";
-import HomePage from "./pages/HomePage";
-import AppRoutes from "./routes/approutes";
+import AppRoutes from "./routes/AppRoutes";
 function App() {
   return (
     <Layout>
